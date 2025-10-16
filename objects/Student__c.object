@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>AdmissionDate__c</fullName>
+        <label>Admission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Admission_Day__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(
+  MOD( AdmissionDate__c - DATE(1900, 1, 7), 7 ),
+  0, &quot;Sunday&quot;,
+  1, &quot;Monday&quot;,
+  2, &quot;Tuesday&quot;,
+  3, &quot;Wednesday&quot;,
+  4, &quot;Thursday&quot;,
+  5, &quot;Friday&quot;,
+  6, &quot;Saturday&quot;,
+  &quot;Unknown&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Admission Day</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClassGrade__c</fullName>
+        <label>Class/Grade</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I-Class</fullName>
+                    <default>false</default>
+                    <label>I-Class</label>
+                </value>
+                <value>
+                    <fullName>II-Class</fullName>
+                    <default>false</default>
+                    <label>II-Class</label>
+                </value>
+                <value>
+                    <fullName>III-Class</fullName>
+                    <default>false</default>
+                    <label>III-Class</label>
+                </value>
+                <value>
+                    <fullName>IV-Class</fullName>
+                    <default>false</default>
+                    <label>IV-Class</label>
+                </value>
+                <value>
+                    <fullName>V-Class</fullName>
+                    <default>false</default>
+                    <label>V-Class</label>
+                </value>
+                <value>
+                    <fullName>VI-Class</fullName>
+                    <default>false</default>
+                    <label>VI-Class</label>
+                </value>
+                <value>
+                    <fullName>VII-Class</fullName>
+                    <default>false</default>
+                    <label>VII-Class</label>
+                </value>
+                <value>
+                    <fullName>VIII-Class</fullName>
+                    <default>false</default>
+                    <label>VIII-Class</label>
+                </value>
+                <value>
+                    <fullName>IX-Class</fullName>
+                    <default>false</default>
+                    <label>IX-Class</label>
+                </value>
+                <value>
+                    <fullName>X-Class</fullName>
+                    <default>false</default>
+                    <label>X-Class</label>
+                </value>
+                <value>
+                    <fullName>XI-Class</fullName>
+                    <default>false</default>
+                    <label>XI-Class</label>
+                </value>
+                <value>
+                    <fullName>XII-Class</fullName>
+                    <default>false</default>
+                    <label>XII-Class</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <label>Gender</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ParentName__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentsEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RollNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>School__c</fullName>
+        <label>School</label>
+        <referenceTo>School__c</referenceTo>
+        <relationshipLabel>Students</relationshipLabel>
+        <relationshipName>Students</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>StudentName__c</fullName>
+        <externalId>false</externalId>
+        <label>Student Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>Prevent_Admission_on_Saturday_or_Sunday</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+  MOD( AdmissionDate__c - DATE(1900, 1, 7), 7 ) = 0,   /* Sunday */
+  MOD( AdmissionDate__c - DATE(1900, 1, 7), 7 ) = 6    /* Saturday */
+)</errorConditionFormula>
+        <errorMessage>Admission Date cannot be on a Saturday or Sunday.</errorMessage>
+    </validationRules>
+</CustomObject>
